@@ -6,10 +6,10 @@ namespace ProduktMock.Models
 {
     public class MockPost
     {
-        public long id {get; set;}
-        public double CardNumber {get; set;}
-        public bool isAccepted {get; set;}
 
+        public int id {get; set;}
+        public int CardNumber {get; set;}
+        public bool isAccepted {get; set;}
         internal AppDB Db {get; set;}
         public MockPost()
         {
@@ -55,7 +55,7 @@ namespace ProduktMock.Models
             cmd.Parameters.Add(new MySqlParameter
             {
                 ParameterName = "@cardnumber",
-                DbType = DbType.Double,
+                DbType = DbType.Int32,
                 Value = CardNumber,
             });
             cmd.Parameters.Add(new MySqlParameter

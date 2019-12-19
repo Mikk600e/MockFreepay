@@ -10,9 +10,9 @@ namespace ProduktMock.Models
     public class MockPostQuery
     {
         public AppDB Db {get;}
-        public MockPostQuery(AppDB dB)
+        public MockPostQuery(AppDB db)
         {
-            Db = Db;
+            Db = db;
         }
         public async Task<MockPost> FindOneAsync(int id)
         {
@@ -52,7 +52,7 @@ namespace ProduktMock.Models
                     var post = new MockPost(Db)
                     {
                         id = reader.GetInt32(0),
-                        CardNumber = reader.GetDouble(1),
+                        CardNumber = reader.GetInt32(1),
                         isAccepted = reader.GetBoolean(2),
                     };
                     posts.Add(post);
